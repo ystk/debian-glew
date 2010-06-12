@@ -1,0 +1,76 @@
+Source: glew
+Priority: optional
+Section: libs
+Maintainer: Joost Yervante Damad <andete@debian.org>
+Build-Depends: debhelper (>> 5.0.0), libgl1-mesa-dev | libgl-dev, libglu1-mesa-dev | libglu-dev, libx11-dev, docbook-to-man, libxmu-dev, libxi-dev, binutils (>> 2.18)
+Standards-Version: 3.8.4
+Homepage: http://glew.sourceforge.net/
+
+Package: glew-utils
+Section: utils
+Architecture: any
+Replaces: libglew1.4 (<< 1.5)
+Depends: libglew1.5 (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
+Description: The OpenGL Extension Wrangler - utilities
+ For more information about GLEW please refer to the description of the
+ libglew-dev package.
+ .
+ This package contains the utilities which can be used to query the
+ supported openGL extensions.
+
+Package: libglew1.5-dev
+Section: libdevel
+Architecture: any
+Depends: libglew1.5 (= ${binary:Version}), libgl1-mesa-dev | libgl-dev, libglu1-mesa-dev | libglu-dev, ${misc:Depends}
+Provides: libglew-dev
+Conflicts: libglew-dev
+Description: The OpenGL Extension Wrangler - development environment
+ The OpenGL Extension Wrangler, GLEW for short, is a library that
+ handles initiliazation of OpenGL extensions in a portable and simple
+ way.  Once the program initializes the library and checks the
+ availability of extensions, it can safely call the entry points defined
+ by the extension.  Currently GLEW supports almost all the extensions
+ found in the OpenGL extension registry[1].
+ .
+ This package contains the development documentation as well as the
+ required header files.
+
+Package: libglew1.5
+Section: libs
+Architecture: any
+Conflicts: libglew1
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Suggests: glew-utils
+Description: The OpenGL Extension Wrangler - runtime environment
+ For more information about GLEW please refer to the description of the
+ libglew-dev package.
+ .
+ This package contains the runtime support files.
+
+Package: libglewmx1.5
+Section: libs
+Architecture: any
+Conflicts: libglew1
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: The OpenGL Extension Wrangler - runtime environment
+ For more information about GLEW please refer to the description of the
+ libglew-dev package.
+ .
+ This package contains the runtime support files, built with GLEW_MX option,
+ adding support for thread-safe usage of multiple rendering contexts.
+
+Package: libglewmx1.5-dev
+Section: libdevel
+Architecture: any
+Provides: libglewmx-dev
+Conflicts: libglewmx-dev
+Depends: libglew1.5-dev, libglewmx1.5 (= ${binary:Version}), ${misc:Depends}
+Description: The OpenGL Extension Wrangler - development environment
+ The OpenGL Extension Wrangler, GLEW for short, is a library that
+ handles initiliazation of OpenGL extensions in a portable and simple
+ way.  Once the program initializes the library and checks the
+ availability of extensions, it can safely call the entry points defined
+ by the extension.  Currently GLEW supports almost all the extensions
+ found in the OpenGL extension registry[1].
+ .
+ This package contains the development libraries compiled with GLEW_MX 
