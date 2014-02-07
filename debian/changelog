@@ -1,3 +1,117 @@
+glew (1.7.0-3) unstable; urgency=low
+
+  [ Alessio Treglia ]
+  * Add libglew1.5-dev on Provides.
+
+  [ Matteo F. Vescovi ]
+  * debian/control: add libglewmx1.5-dev on Provides.
+
+ -- Matteo F. Vescovi <mfv.debian@gmail.com>  Mon, 13 Feb 2012 11:54:16 +0100
+
+glew (1.7.0-2) unstable; urgency=low
+
+  * Upload to unstable
+
+  [ Matteo F. Vescovi ]
+  * debian/glew-utils.docs: removing LICENSE.txt
+  * debian/glew-utils.docs: adding upstream docs
+  * debian/libglewmx-dev.install: removing static lib
+  * debian/libglew-dev.install: removing static lib
+  * libglew*-dev.install files renamed removing SONAME
+  * debian/compat: bump to "9" for multi-arch support
+  * debian/control: "Multi-Arch:" added to -dev packages
+  * debian/control: SONAME removed from -dev packages
+  * debian/control: typos corrected
+  * debian/control: maintainer's email address changed
+
+  [ Alessio Treglia ]
+  * debian/copyright: Fix uncorrect license name, actually
+    it is BSD-3-clause.
+  * debian/rules: Use dh_autotools-dev_{restore,update}config
+    mechanism to automagically refresh config/config.guess.
+  * debian/control: Add autotools-dev to Build-Depends.
+
+ -- Matteo F. Vescovi <mfv.debian@gmail.com>  Fri, 10 Feb 2012 10:15:33 +0100
+
+glew (1.7.0-1) experimental; urgency=low
+
+  [ Yaroslav Halchenko ]
+  * Added Vcs- header fields
+  * Minor tune ups of the long descriptions
+
+  [ Fabrizio Regalli ]
+  * Imported Upstream version 1.7.0
+  * Switch to 3.0 quilt format
+  * Update d/compat to 8
+  * Really update d/compat
+  * Added d/source/options files
+  * Renamed all 1.6 install files to 1.7
+  * Adjustin d/control with new 1.7 version number
+  * Added build-{indep,arch} to d/rules
+  * Added libglew*.symbols to debian directory
+  * Update d/shlibs.local with new 1.7 version
+
+  [ Matteo F. Vescovi ]
+  * New maintainer (Closes: #634069)
+  * debian/control: VCS-Links updated
+  * debian/control: duplicated Section fields removed.
+     - Drop of "Section: libs" fields duplicated for
+       libglew1.6 and libglewmx1.6
+     - Short-Description field for libglewmx1.6 modified
+  * debian/control: libglewmx1.6-dev Short-Description fixed
+
+ -- Matteo F. Vescovi <m.vescovi@revese.it>  Tue, 29 Nov 2011 10:56:40 +0100
+
+glew (1.6.0-3) unstable; urgency=low
+
+  * incorporate multi-arch changes, thanks to Gregory Hainaut
+    and Steve Langasek (Closes: #631548)
+
+ -- Joost Yervante Damad <andete@debian.org>  Sat, 16 Jul 2011 12:46:42 +0200
+
+glew (1.6.0-2) unstable; urgency=low
+
+  * temporary let libglew1.6-dev provide libglew1.5-dev (Closes: #630536)
+  * temporary let libglewmx1.6-dev provide libglewmx1.5-dev
+
+ -- Joost Yervante Damad <andete@debian.org>  Wed, 15 Jun 2011 09:21:24 +0200
+
+glew (1.6.0-1) unstable; urgency=low
+
+  * New upstream release
+  * new sonames for 1.6
+  * refer libglew1.6-dev in descr (Closes: #628623)
+  * fix spelling error (Closes: #628624)
+  * fix lintian warning description-synopsis-starts-with-article
+
+ -- Joost Yervante Damad <andete@debian.org>  Fri, 10 Jun 2011 15:25:37 +0200
+
+glew (1.5.8-3) unstable; urgency=low
+
+  * remove Multi-Arch again (Thanks Steve) (Closes: #616663)
+
+ -- Joost Yervante Damad <andete@debian.org>  Tue, 15 Mar 2011 08:22:21 +0100
+
+glew (1.5.8-2) unstable; urgency=low
+
+  * fix watch file (Closes: #611137), thanks Artur Rona
+  * add Multi-Arch: foreign to libglew and libglewmx
+
+ -- Joost Yervante Damad <andete@debian.org>  Sun, 13 Mar 2011 11:24:04 +0100
+
+glew (1.5.8-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Joost Yervante Damad <andete@debian.org>  Wed, 09 Feb 2011 07:52:32 +0100
+
+glew (1.5.7-1) experimental; urgency=low
+
+  * New upstream release
+  * back to source format 1.0
+
+ -- Joost Yervante Damad <andete@debian.org>  Tue, 11 Jan 2011 11:20:03 +0100
+
 glew (1.5.4-1) unstable; urgency=low
 
   * New upstream release (Closes: #580909)
