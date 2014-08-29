@@ -1,4 +1,4 @@
-Format: http://anonscm.debian.org/viewvc/dep/web/deps/dep5.mdwn?revision=174
+Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: glew
 Upstream-Contact: Milan Ikits <milan.ikits@ieee.org>
                   Marcelo E. Magallon <mmagallo@debian.org>
@@ -6,8 +6,8 @@ Source: http://glew.sf.net
 
 Files: debian/*
 Copyright: Copyright 2003 Marcelo E. Magallon <mmagallo@debian.org>
-           Copyright 2011 Fabrizio Regalli <fabreg@fabreg.it>
-           Copyright 2011 Matteo F. Vescovi <m.vescovi@revese.it>
+           Copyright 2011-2012 Fabrizio Regalli <fabreg@fabreg.it>
+           Copyright 2011-2012 Matteo F. Vescovi <mfv.debian@gmail.com>
 License: GPL-2+
 
 Files: include/*
@@ -88,7 +88,7 @@ License: GPL-2+
  WITHOUT ANY WARRANTY; without even the implied warranty of
  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  See the GNU General Public License for more details.
-Comment: 
+ .
  You should have received a copy of the GNU General Public License
  along with this program; if not, write to the Free Software
  Foundation, Inc., 51 Franklin Street - Fifth Floor, Boston, MA

@@ -1,3 +1,86 @@
+glew (1.10.0-3) unstable; urgency=low
+
+  * debian/shlibs.local: 1.9 => 1.10 version bump
+  * debian/patches/: patchset updated
+    - 0001-Touch_glewmx.pc.in_file.patch dropped (useless)
+    - 0002-Fix_FTBFS_on_kFreeBSD.patch renamed to #0001
+    - 0003-Config_files_update.patch renamed to #0002
+    - 0003-Drop_PHONY_on_pc_files.patch added (Closes: #729634)
+
+ -- Matteo F. Vescovi <mfv.debian@gmail.com>  Tue, 19 Nov 2013 08:52:52 +0100
+
+glew (1.10.0-2) unstable; urgency=low
+
+  * Upload to unstable (Closes: #713984)
+  * debian/: use of autotools to update config files dropped
+    - debian/control: autotools-dev b-dep dropped
+    - debian/rules: dh_autotools_dev calls removed
+    - #0003-Config_files_update.patch added
+    Thanks to Matthias Klose for the hint. (Closes: #727276)
+
+ -- Matteo F. Vescovi <mfv.debian@gmail.com>  Mon, 11 Nov 2013 10:04:59 +0100
+
+glew (1.10.0-1) experimental; urgency=low
+
+  * New upstream release
+    - debian/patches/: patchset updated
+      - 0001-Touch_glewmx.pc.in_file.patch refreshed
+      - 0002-Fix_FTBFS_on_kFreeBSD.patch updated
+    - debian/: massive modification due to SONAME bump 1.9 => 1.10
+      - control: package renaming
+      - rules: dh-strip's parameters updated
+      - libglew1.9.install => libglew1.10.install
+      - libglewmx1.9.install => libglewmx1.10.install
+      - libglew1.9.symbols => libglew1.10.symbols + version bump
+      - libglewmx1.9.symbols => libglewmx1.10.symbols + version bump
+  * debian/control: S-V bump 3.9.3 => 3.9.4 (no changes needed)
+  * debian/control: Vcs-Git field updated
+
+ -- Matteo F. Vescovi <mfv.debian@gmail.com>  Mon, 07 Oct 2013 11:55:13 +0200
+
+glew (1.9.0-3) experimental; urgency=low
+
+  * debian/: debug packages added (Closes: #686522)
+
+ -- Matteo F. Vescovi <mfv.debian@gmail.com>  Mon, 03 Sep 2012 09:31:45 +0200
+
+glew (1.9.0-2) experimental; urgency=low
+
+  * debian/: fix FTBFS on kFreeBSD
+  * debian/rules: maintainer copyright added and cosmetic change
+  * debian/source/options: outdated Makefile exceptions removed
+
+ -- Matteo F. Vescovi <mfv.debian@gmail.com>  Sat, 18 Aug 2012 11:41:48 +0200
+
+glew (1.9.0-1) experimental; urgency=low
+
+  * New upstream release
+    - debian/control: 1.8 => 1.9 version bump
+    - debian/shlibs.local: shlibs version bump
+    - debian/*.install: version bump in filenames
+    - debian/*.symbols: version updated and
+      new symbols added
+
+ -- Matteo F. Vescovi <mfv.debian@gmail.com>  Tue, 07 Aug 2012 15:32:58 +0200
+
+glew (1.8.0-1) experimental; urgency=low
+
+  * New upstream release
+    + debian/: SONAME bump 1.7 => 1.8
+    + debian/: symbols files updated
+  * debian/copyright: debian files copyright updated
+  * debian/control: debhelper bump 8 => 9
+  * debian/control: Standards-Version bumped to 3.9.3
+  * debian/shlibs.local: shlibs version bump
+  * debian/rules: Makefile copying and manpages removal commented
+  * debian/glew-utils.manpages: file removed
+  * glewmx.pc.in: non-upstream file removed.
+    This file was wrongly added to upstream source tree
+    directly, instead of providing a patch doing so.
+    So, fixing this issue now.
+
+ -- Matteo F. Vescovi <mfv.debian@gmail.com>  Fri, 27 Jul 2012 16:20:01 +0200
+
 glew (1.7.0-3) unstable; urgency=low
 
   [ Alessio Treglia ]

@@ -1,6 +1,7 @@
 #!/usr/bin/make -f
 # (C) 2003 Marcelo E. Magallón <mmagallo@debian.org>
 # (C) 2006-2011 Joost Yervante Damad <andete@debian.org>
+# (C) 2012 Matteo F. Vescovi <mfv.debian@gmail.com>
 
 export DH_VERBOSE
 # export DH_NO_ACT
@@ -29,11 +30,10 @@ configure-stamp:
 build:
 
 install: build-stamp
-build-stamp: configure-stamp debian-manpages
+build-stamp: configure-stamp
 	dh_testdir
 	dh_testroot
 	dh_prep
-	dh_autotools-dev_updateconfig
 	$(MAKE) GL_LDFLAGS=-lGL GLU_LDFLAGS=-lGLU GLUT_LDFLAGS=-lglut LIBDIR=/usr/lib/$(DEB_HOST_MULTIARCH)
 	touch build-stamp
 	dh_installdirs
@@ -42,13 +42,9 @@ build-stamp: configure-stamp debian-manpages
 clean:
 	dh_testdir
 	dh_testroot
-	cp -f config/Makefile.linux config/Makefile.gnu
-	cp -f config/Makefile.linux config/Makefile.kfreebsd
 	rm -f build-stamp build-stampmx configure-stamp
 	$(MAKE) distclean
-	dh_autotools-dev_restoreconfig
 	dh_clean
-	-rm $(shell cat debian/*.manpages)
 
 # Build architecture-independent files here.
 binary-indep: build install
@@ -66,7 +62,8 @@ binary-arch: build install
 	dh_install --sourcedir=debian/tmp
 	dh_installman
 	dh_link
-	dh_strip
+	dh_strip -plibglew1.10 --dbg-package=libglew-dbg
+	dh_strip -plibglewmx1.10 --dbg-package=libglewmx-dbg
 	dh_compress
 	dh_fixperms
 	dh_makeshlibs -V
@@ -77,8 +74,6 @@ binary-arch: build install
 	dh_builddeb
 
 binary: binary-indep binary-arch
-
-debian-manpages: $(shell cat debian/*.manpages)
 
 debian/%.1: debian/%.sgml
 	docbook-to-man $< > $@
